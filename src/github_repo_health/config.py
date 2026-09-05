@@ -12,12 +12,15 @@ class Settings:
 
     @classmethod
     def from_environment(cls) -> "Settings":
+        github_token = os.getenv("GITHUB_TOKEN")
+        if github_token in {"", "your-github-token", "your_token_here"}:
+            github_token = None
         return cls(
             groq_api_key=os.getenv("GROQ_API_KEY"),
             groq_model=os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"),
             github_owner=os.getenv("GITHUB_OWNER"),
             github_repo=os.getenv("GITHUB_REPO"),
-            github_token=os.getenv("GITHUB_TOKEN"),
+            github_token=github_token,
         )
 
     def require_groq_api_key(self) -> str:
