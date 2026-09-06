@@ -76,8 +76,8 @@ Set these values in `.env`:
 ```text
 GROQ_API_KEY=your-groq-api-key
 GROQ_MODEL=openai/gpt-oss-120b
-GITHUB_OWNER=modelcontextprotocol
-GITHUB_REPO=python-sdk
+GITHUB_OWNER=chetangpande-ai
+GITHUB_REPO=GitHubReposHealth-MCP
 GITHUB_TOKEN=your-github-token
 ```
 
@@ -107,6 +107,8 @@ uv run github-health-mcp
 ```
 
 The MCP server is normally started automatically by the LangChain client over stdio.
+
+The current repository target is configured through `GITHUB_OWNER` and `GITHUB_REPO`; change those values to analyze a different repository without changing the code.
 
 ## Agent Flow
 
